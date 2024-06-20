@@ -103,8 +103,7 @@ export async function crawlController(req: Request, res: Response) {
       origin: req.body.origin ?? "api",
     });
 
-    await logCrawl(job.id.toString(), team_id);
-
+    console.log(`Job ${job.id} queued`);
     res.json({ jobId: job.id });
   } catch (error) {
     console.error(error);
